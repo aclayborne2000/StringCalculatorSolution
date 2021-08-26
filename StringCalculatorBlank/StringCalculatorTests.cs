@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,9 @@ namespace StringCalculatorBlank
 
         public StringCalculatorTests()
         {
-            _calculator = new();
+            _calculator = new StringCalculator(
+                new Mock<ILogger>().Object,
+                new Mock<IWebService>().Object);
         }
 
         [Fact]
