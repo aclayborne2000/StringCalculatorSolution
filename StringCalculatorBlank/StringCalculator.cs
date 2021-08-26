@@ -11,7 +11,10 @@ namespace StringCalculatorBlank
 
         public int Add(string numbers)
         {
-            return -42;
+            return numbers == "" ? 0 : numbers.Split(',')
+                .Select(int.Parse)
+                .Sum();
         }
     }
 }
+
